@@ -257,16 +257,65 @@ function AppShell() {
         </header>
 
         {/* Scrollable Page Body */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 bg-slate-50">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/leads" element={<Leads />} />
-            <Route path="/pipeline" element={<Pipeline />} />
-            <Route path="/follow-ups" element={<FollowUps />} />
-            <Route path="/import-export" element={<ImportExport />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+        <main className="flex-1 overflow-y-auto flex flex-col justify-between bg-slate-50">
+          <div className="p-4 sm:p-6 flex-1">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/leads" element={<Leads />} />
+              <Route path="/pipeline" element={<Pipeline />} />
+              <Route path="/follow-ups" element={<FollowUps />} />
+              <Route path="/import-export" element={<ImportExport />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </div>
+
+          {/* Premium Developer Attribution Footer */}
+          <footer className="border-t border-slate-200/80 bg-white/70 backdrop-blur-xs px-4 sm:px-6 py-3.5 transition-colors">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2.5 text-center sm:text-left">
+              <a
+                href="https://salah-portfolio-pink.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Portfolio of Salah — Software Developer & Creative Technologist"
+                className="group inline-flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg hover:bg-slate-100/80 text-slate-500 hover:text-slate-900 transition-all duration-200"
+              >
+                <img
+                  src="/s-symbol.webp"
+                  alt="Salah Logo"
+                  width="15"
+                  height="17"
+                  className="h-4 w-auto object-contain shrink-0 transition-transform duration-200 group-hover:scale-110 drop-shadow-2xs"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="flex items-center flex-wrap justify-center sm:justify-start gap-1.5 font-mono text-[11px] tracking-wider uppercase leading-none">
+                  <span className="font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                    SALAH
+                  </span>
+                  <span className="text-slate-300 select-none" aria-hidden="true">·</span>
+                  <span className="text-[10px] font-medium text-slate-500 group-hover:text-slate-700 transition-colors">
+                    SOFTWARE DEVELOPER
+                  </span>
+                  <span className="text-slate-300 select-none" aria-hidden="true">·</span>
+                  <span className="text-[10px] font-medium text-slate-500 group-hover:text-slate-700 transition-colors">
+                    CREATIVE TECHNOLOGIST
+                  </span>
+                  <ExternalLink
+                    size={11}
+                    className="text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-0.5"
+                    aria-hidden="true"
+                  />
+                </div>
+              </a>
+
+              <div className="flex items-center gap-3 text-[11px] font-mono text-slate-400">
+                <span>LeadFlow CRM v1.0</span>
+                <span className="text-slate-300 select-none" aria-hidden="true">·</span>
+                <span>Offline-First</span>
+              </div>
+            </div>
+          </footer>
         </main>
       </div>
 
